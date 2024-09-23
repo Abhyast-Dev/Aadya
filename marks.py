@@ -4,7 +4,7 @@ import streamlit as st
 import plotly.express as px
 
 
-exam_marks= pd.read_csv("Examdatesandmarks.csv",usecols=['Examination','English','Hindi', 'Maths','Science','SSt','AI','Percentage'])
+exam_marks= pd.read_csv("Examdatesandmarks.csv",usecols=['Examination','English','Hindi', 'Maths','Science','SSt','German','Percentage'])
 exams = exam_marks.query("Percentage.notnull()")["Examination"]
 perc = exam_marks.query("Percentage.notnull()")["Percentage"]
 
@@ -62,11 +62,11 @@ def score():
         Maths = st.number_input("Math marks")
         Science = st.number_input("Science marks")
         SST = st.number_input("SSt marks")
-        AI = st.number_input("AI marks")
+        German = st.number_input("German marks")
         if option in['PT1','PT2']:
-            per = (Eng+Hindi+Maths+Science+SST+AI)/((25*5)+10)*100
+            per = (Eng+Hindi+Maths+Science+SST+German)/((25*5)+10)*100
         else:
-            per = (Eng+Hindi+Maths+Science+SST+AI)/((80*5)+50)*100
+            per = (Eng+Hindi+Maths+Science+SST+German)/((80*5)+50)*100
         Per = round(per,2)
         updated = exam_marks['Examination'] == option
         exam_marks.loc[updated, 'English'] = Eng
@@ -74,7 +74,7 @@ def score():
         exam_marks.loc[updated, 'Maths'] = Maths
         exam_marks.loc[updated, 'Science'] = Science
         exam_marks.loc[updated, 'SSt'] = SST
-        exam_marks.loc[updated, 'AI'] = AI
+        exam_marks.loc[updated, 'German'] = German
         exam_marks.loc[updated, 'Percentage'] = Per
        
         
@@ -114,12 +114,12 @@ def subj_Analysis():
             break
         elif i in [0,1]:
                 
-                if option == "AI":
+                if option == "German":
                     lsubj.append(((exam_marks[option][i])/10)*100)
                 else:
                     lsubj.append(((exam_marks[option][i])/25)*100)
         else:
-                if option == "AI":
+                if option == "German":
                     lsubj.append(((exam_marks[option][i])/50)*100)
                 else:
                     lsubj.append(((exam_marks[option][i])/80)*100)
