@@ -64,10 +64,10 @@ def score():
         SST = st.number_input("SSt marks")
         German = st.number_input("German marks")
         if option in['PT1','PT2']:
-            per = (Eng+Hindi+Maths+Science+SST+German)/((25*6))*100
+            per = (Eng+Hindi+Maths+Science+SST+German)/(25*6)*100
         else:
             gper = (German/50)*100
-            per = (Eng+Hindi+Maths+Science+SST)/((60*5))*100
+            per = (Eng+Hindi+Maths+Science+SST)/(60*5)*100
             per = per+gper
         Per = round(per,2)
         updated = exam_marks['Examination'] == option
@@ -117,14 +117,14 @@ def subj_Analysis():
         elif i in [0,1]:
                 
                 if option == "German":
-                    lsubj.append(((exam_marks[option][i])/10)*100)
+                    lsubj.append(((exam_marks[option][i])/25)*100)
                 else:
                     lsubj.append(((exam_marks[option][i])/25)*100)
         else:
                 if option == "German":
                     lsubj.append(((exam_marks[option][i])/50)*100)
                 else:
-                    lsubj.append(((exam_marks[option][i])/80)*100)
+                    lsubj.append(((exam_marks[option][i])/60)*100)
 
          
          
