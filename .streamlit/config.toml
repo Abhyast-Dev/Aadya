@@ -2,14 +2,14 @@
 
 # Used to style primary interface elements. It's the color displayed most frequently across your app's
 # screens and components. Examples of widgets using this color are st.slider and st.checkbox.
-primaryColor = "#1F618D"
+primaryColor =  "#C54B8C"
 
 # Background color for the main container.
 backgroundColor = "#FFFFFF"
 
 # Used as the background for most widgets. Examples of widgets with this background are st.sidebar,
 # st.text_input, st.date_input.
-secondaryBackgroundColor = "#D6EAF8"
+secondaryBackgroundColor = "#ffb7c5"
 
 # Font color for the page.
 textColor = "#000000"
