@@ -64,9 +64,11 @@ def score():
         SST = st.number_input("SSt marks")
         German = st.number_input("German marks")
         if option in['PT1','PT2']:
-            per = (Eng+Hindi+Maths+Science+SST+German)/((25*5)+10)*100
+            per = (Eng+Hindi+Maths+Science+SST+German)/((25*6))*100
         else:
-            per = (Eng+Hindi+Maths+Science+SST+German)/((80*5)+50)*100
+            gper = (German/50)*100
+            per = (Eng+Hindi+Maths+Science+SST)/((60*5))*100
+            per = per+gper
         Per = round(per,2)
         updated = exam_marks['Examination'] == option
         exam_marks.loc[updated, 'English'] = Eng
