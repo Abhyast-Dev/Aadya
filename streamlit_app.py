@@ -31,7 +31,7 @@ def daysleft():
     delta = board_date - today
     return(delta)
 st.caption(":orange[Today is: "+str(date.today(). strftime("%d/%m/%y"))+"]")
-st.header(":blue[Abeer's Dashboard]")
+st.header(":blue[Aadya's Dashboard]")
 st.subheader("")
 
 
@@ -42,7 +42,7 @@ st.subheader("")
 
 with st.sidebar:
     st.logo('logo/logosmall.png', icon_image='logo/Abhyast full.png')
-    st.subheader('Hi, Abeer!:i_love_you_hand_sign:')
+    st.subheader('Hi, Aadya!:i_love_you_hand_sign:')
     diff = str(daysleft())
     
     ndays = diff.split(',')
@@ -62,7 +62,7 @@ elif choice=="***Your marks***":
     with tab1:
             marks.score()
     with tab2:
-          st.subheader("Hey Abeer! The marks need to be directly updated to CSV. Sorry for the inconvenience")
+          st.subheader("Hey Aadya! The marks need to be directly updated to CSV. Sorry for the inconvenience")
           #marks.update_marks()
     with tab3:
             marks.exam_Analysis()
@@ -74,7 +74,7 @@ elif choice=="***Your Progress***":
     with tab1:
           pr.subject()
     with tab2:
-          st.subheader("Hey Abeer! The marks need to be directly updated to CSV. Sorry for the inconvenience")
+          st.subheader("Hey Aadya! The marks need to be directly updated to CSV. Sorry for the inconvenience")
           #pr.revision()
     with tab3:
           pr.testRec()
